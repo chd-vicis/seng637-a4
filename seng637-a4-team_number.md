@@ -2,12 +2,13 @@
 
 **Lab. Report \#4 – Mutation Testing and Web app testing**
 
-| Group \#:      |     |
-| -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Group: SENG637- 2   |
+|-----------------|
+| Jash Dubal                |   
+| Steven Duong              |   
+| Nikhil Naikar               |   
+| Jason Xu                |
+| Christopher DiMattia                |
 
 # Introduction
 
@@ -16,13 +17,17 @@
 
 # Report all the statistics and the mutation score for each test class
 - Mutation Score of Range Class - Before<br>
-  <img width="600" alt="Screenshot 2023-07-26 at 5 24 32 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/88955810-62c9-4fc0-ab4a-37eea388738f">
+  <img width="600" alt="Screenshot 2023-07-26 at 5 24 32 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/88955810-62c9-4fc0-ab4a-37eea388738f"><br>
 - Mutation Statistics of Range Class - Before<br>
-  <img width="300" alt="Screenshot 2023-07-26 at 5 25 34 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/c591613f-c6f5-47a4-bf51-5d1d9dcf99cb">
+  <img width="300" alt="Screenshot 2023-07-26 at 5 25 34 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/c591613f-c6f5-47a4-bf51-5d1d9dcf99cb"><br>
   Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods and the total mutation score from these 5 tested methods in Range Class.
   |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
   |-------------|----------------------|---------------------|-------|----------------|
   |Range.combine(Range range1, Range range2)| |     | ||
+  |Range.toString()| |     | ||
+  |Range.getLength()| |     | ||
+  |Range.getLowerBound()| |     | ||
+  |Range.getUpperBound()| |     | ||
   
 
 

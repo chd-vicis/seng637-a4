@@ -23,11 +23,12 @@
   Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods and the total mutation score from these 5 tested methods in Range Class.
   |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
   |-------------|----------------------|---------------------|-------|----------------|
-  |Range.combine(Range range1, Range range2)| |     | ||
-  |Range.toString()| |     | ||
-  |Range.getLength()| |     | ||
-  |Range.getLowerBound()| |     | ||
-  |Range.getUpperBound()| |     | ||
+  |Range.combine(Range range1, Range range2)| 6 | 27 | 33 | 82 %|
+  |Range.toString()| 4 | 18 | 22 | 82% |
+  |Range.getLength()| 4 | 15 | 19 | 79% |
+  |Range.getLowerBound()| 1 | 6 | 7 | 86% |
+  |Range.getUpperBound()| 1 | 6 | 7 | 86% |
+  |Total| 16 | 72 | 88 | 82% |
   
 
 

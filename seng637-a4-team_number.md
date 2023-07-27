@@ -14,6 +14,10 @@
 
 
 # Analysis of 10 Mutants of the Range class 
+1. Mutation #1 (on line #123, mutation #5)<br>
+Mutation applied by Pitest tool - Replaced double subtraction with addition on method Range.getLength(). This mutant was applied on the following line:
+> return this.upper - this.lower;
+This mutation replaced the "-" with 
 
 # Report all the statistics and the mutation score for each test class
 - Mutation Score of Range Class - Before<br>

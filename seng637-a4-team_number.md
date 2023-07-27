@@ -26,7 +26,14 @@
   ```
   return this.upper - this.lower;
   ```
-  This mutation was including a post-increment operation to the variable upper. However, since the above statement will still use the original value of the upper for the subtraction and the upper value is only used once in the above statement, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.
+  This mutation was including a post-increment operation to the variable upper. However, since the above statement will still use the original value of the upper for the subtraction and the upper value is only used once in the above statement, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
+
+3. Mutation #3 (on line #105, mutation #1)<br>
+  Mutation applied by Pitest tool - Incremented (a++) double field lower on method Range.getLowerBound(). This mutant was applied on the following line:
+  ```
+  return this.lower;
+  ```
+  This mutation was including a post-increment operation to the variable lower. However, since the above statement will still return the original value of the lower variable and the lower variable value is only used once in the above statement, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
   
 
 # Report all the statistics and the mutation score for each test class

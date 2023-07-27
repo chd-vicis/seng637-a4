@@ -15,11 +15,18 @@
 
 # Analysis of 10 Mutants of the Range class 
 1. Mutation #1 (on line #123, mutation #5)<br>
-Mutation applied by Pitest tool - Replaced double subtraction with addition on method Range.getLength(). This mutant was applied on the following line:
+  Mutation applied by Pitest tool - Replaced double subtraction with addition on method Range.getLength(). This mutant was applied on the following line:
   ```
-    return this.upper - this.lower;
+  return this.upper - this.lower;
   ```
-    This mutation was an arithmetic operator replacement since it replaced the "-" with "+", adding the two variables instead of subtracting them, affecting the returned value. This mutant managed to be killed by some of the test cases. For example, one test case that killed this mutant was testGetLengthValidRange(), fed in a range with lowerbound being -1 and upper bound being 1 and expected this function getLength() to return 2 (1 - (-1) = 2). Thefore, since this mutant was introduced the result ended up being 0 (1 + (-1) = 0) and thus resulted in this test case failing, which means the mutant was killed.
+  This mutation was an arithmetic operator replacement since it replaced the "-" with "+", adding the two variables instead of subtracting them, affecting the returned value. This mutant managed to be killed by some of the test cases. For example, one test case that killed this mutant was testGetLengthValidRange(), fed in a range with the lower bound being -1 and the upper bound being 1 and expected this function getLength() to return 2 (1 - (-1) = 2). Therefore, since this mutant was introduced the result ended up being 0 (1 + (-1) = 0) and thus resulted in this test case failing, which means the mutant was killed.
+2. Mutation #2 (on line #123, mutation #1)<br>
+  Mutation applied by Pitest tool - Incremented (a++) double field upper on method Range.getLength(). This mutant was applied on the following line:
+  ```
+  return this.upper - this.lower;
+  ```
+  This mutation was including a post-increment operation to the variable upper. However, since the above statement will still use the original value of the upper for the subtraction and the upper value is only used once in the above statement, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.
+  
 
 # Report all the statistics and the mutation score for each test class
 - Mutation Score of Range Class - Before<br>

@@ -55,7 +55,7 @@
   <img width="600" alt="Screenshot 2023-07-26 at 5 24 32 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/88955810-62c9-4fc0-ab4a-37eea388738f"><br>
 - Mutation Statistics of Range Class - Before<br>
   <img width="300" alt="Screenshot 2023-07-26 at 5 25 34 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/c591613f-c6f5-47a4-bf51-5d1d9dcf99cb"><br>
-  Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods and the total mutation score from these 5 tested methods in Range Class.
+  Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
   |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
   |-------------|----------------------|---------------------|-------|----------------|
   |Range.combine(Range range1, Range range2)| 6 | 27 | 33 | 82 %|
@@ -63,10 +63,23 @@
   |Range.getLength()| 4 | 15 | 19 | 79% |
   |Range.getLowerBound()| 1 | 6 | 7 | 86% |
   |Range.getUpperBound()| 1 | 6 | 7 | 86% |
-  |Total| 16 | 72 | 88 | 82% |
   
-
-
+- Mutation Score of Range Class - After<br>
+  <img width="820" alt="Screenshot 2023-07-28 at 5 49 16 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/5d291748-4e99-4186-af31-c70c3f416e94">
+- Mutation Statistics of Range Class - After<br>
+  <img width="202" alt="Screenshot 2023-07-28 at 5 49 28 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/08e929aa-47e2-41fe-acba-7e59abd8de26">
+  Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
+  Note: The mutation score could not be improved by adding more test cases for the original 5 test methods. This is because the original test cases managed to kill every mutant but the equivalent mutants. Therefore, test cases for two more methods were added to improve the mutation score.
+  |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
+  |-------------|----------------------|---------------------|-------|----------------|
+  |Range.combine(Range range1, Range range2)| 6 | 27 | 33 | 82 %|
+  |Range.toString()                         | 4 | 18 | 22 | 82% |
+  |Range.getLength()                        | 4 | 15 | 19 | 79% |
+  |Range.getLowerBound()                    | 1 | 6 | 7 | 86% |
+  |Range.getUpperBound()                    | 1 | 6 | 7 | 86% |
+  |Range.contains(double value)             | 8 | 45 | 53 | 85% |
+  |Range.intersects(double b0, double b1)   | 22 | 84 | 106 | 79% |
+  
 
 # Analysis drawn on the effectiveness of each of the test classes
 

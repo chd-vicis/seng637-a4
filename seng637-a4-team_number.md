@@ -65,9 +65,9 @@
   |Range.getUpperBound()| 1 | 6 | 7 | 86% |
   
 - Mutation Score of Range Class - After<br>
-  <img width="820" alt="Screenshot 2023-07-28 at 5 49 16 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/5d291748-4e99-4186-af31-c70c3f416e94">
+  <img width="820" alt="Screenshot 2023-07-28 at 5 49 16 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/5d291748-4e99-4186-af31-c70c3f416e94"><br>
 - Mutation Statistics of Range Class - After<br>
-  <img width="202" alt="Screenshot 2023-07-28 at 5 49 28 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/08e929aa-47e2-41fe-acba-7e59abd8de26">
+  <img width="202" alt="Screenshot 2023-07-28 at 5 49 28 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/08e929aa-47e2-41fe-acba-7e59abd8de26"><br>
   Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
   Note: The mutation score could not be improved by adding more test cases for the original 5 test methods. This is because the original test cases managed to kill every mutant but the equivalent mutants. Therefore, test cases for two more methods were added to improve the mutation score.
   |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |

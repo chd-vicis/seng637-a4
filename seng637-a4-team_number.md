@@ -19,7 +19,7 @@
   ```
   return this.upper - this.lower;
   ```
-  This mutation was an arithmetic operator replacement since it replaced the "-" with "+", adding the two variables instead of subtracting them, affecting the returned value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was testGetLengthValidRange(), fed in a range with the lower bound being -1 and the upper bound being 1 and expected this function getLength() to return 2 (1 - (-1) = 2). Therefore, since this mutant was introduced the result ended up being 0 (1 + (-1) = 0) and thus resulted in this test case failing, which means the mutant was killed.<br>
+  This mutation was an arithmetic operator replacement since it replaced the "-" with "+", adding the two variables instead of subtracting them, affecting the returned value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was testGetLengthValidRange(), fed in a range with the lower bound being -1 and the upper bound being 1 and expected this function getLength() to return  2 (1 - (-1) = 2). Therefore, since this mutant was introduced the result ended up being 0 (1 + (-1) = 0) and thus resulted in this test case failing, which means the mutant was killed.<br>
   
 2. Mutation #2 (on line #123, mutation #1)<br>
   Mutation applied by Pitest tool - Incremented (a++) double field upper on method Range.getLength(). This mutant was applied on the following line:
@@ -55,6 +55,13 @@
   double l = Math.min(range1.getLowerBound(), range2.getLowerBound());
   ```
   This mutation removed the Math.min function and with assumption assigned variable l either the first argument (range1.getLowerBound()) or the second (range2.getLowerBound()). This mutant does affect the returned value and could potentially return an incorrect result. However, this mutant managed to survive, meaning all my test cases for this method passed. Therefore, more test cases need to be added to kill this mutant.<br>
+
+7. Mutation #7 (on line #223, mutation #2 & #3)<br>
+  Mutation applied by Pitest tool  - removed call to org/jfree/data/Range::getLowerBound on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
+  ```
+  double l = Math.min(range1.getLowerBound(), range2.getLowerBound());
+  ```
+  This mutation affects the returned value and could potentially return an incorrect result. Also, this same mutation happened twice but strangely the first time it survived, and the second time it was killed. Therefore, more test cases need to be added to ensure that all occurrences of this type of mutant are caught and killed.<br> 
 
   
 # Report all the statistics and the mutation score for each test class

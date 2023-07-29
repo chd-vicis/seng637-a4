@@ -96,10 +96,19 @@
 | Name of Test               | Command (Assert)                   | Verification Checkpoints                                                        |
 |----------------------------|---------------------------|---------------------------------------------------------------------------------|
 | `VerifyProductReviews` | `assert text` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)). |
-| `NavigateToProductReviews` | 'assert element present' | verifies the presence of "Customer Reviews" |
+| `NavigateToProductReviews` | `assert element present` | verifies the presence of "Customer Reviews" |
+| `SearchItem` | `assert text` | verifies the presence of an item after searching for it |
+| `SearchInvalidItem` | `assert text` | verifies the presence of "computer monitor" in the text of the queried items |
 
 
-# how did you test each functionaity with different test data
+# how did you test each functionality with different test data
+
+| Functionality         | Test Cases                                                            |
+|-----------------------|-----------------------------------------------------------------------|
+| Reviews                 | Test if the reviews belong to the correct product          |
+|                       | Test the presence of customer reviews for a patio item |
+| Search bar    | Test search for an item that does not exist using "computer monitor"                                         |
+|                       | Test "toolbox" for search                                              |
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 

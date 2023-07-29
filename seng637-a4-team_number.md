@@ -115,7 +115,7 @@ Assertions and checkpoints are vital components of our testing process, utilized
 
 # how did you test each functionality with different test data
 
-We selected X key functionalities of the Home Depot website to test thoroughly. For each functionality, we developed test cases using Selenium IDE. The table below covers the test cases that we developed.
+We selected X key functionalities of the Home Depot website to test thoroughly. For each functionality, we developed test cases using Selenium IDE. The table below covers the test cases that we developed:
 
 | Functionality         | Test Cases                                                            |
 |-----------------------|-----------------------------------------------------------------------|

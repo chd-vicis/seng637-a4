@@ -49,6 +49,13 @@
   ```
   This mutation removed the conditional check and always made the condition output true. The above statement will now result in the range2 always being returned, affecting the return value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was combineWithAUB(), fed in a range1(0.0, 1.1) and a range2(-1.0, 1.0), expected this function combine(Range range1, Range range2) to return a range(-1.0, 1.1). But, since this mutant was introduced the returned value ended up being a range(-1.0, 1.0) (which is just range2) and thus resulted in this test case failing, which means the mutant was killed.<br>
 
+6. Mutation #6 (on line #223, mutation #1)<br>
+  Mutation applied by Pitest tool - replaced call to java/lang/Math::min with argument on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
+  ```
+  double l = Math.min(range1.getLowerBound(), range2.getLowerBound());
+  ```
+  This mutation removed the Math.min function and with assumption assigned variable l either the first argument (range1.getLowerBound()) or the second (range2.getLowerBound()). This mutant does affect the returned value and could potentially return an incorrect result. However, this mutant managed to survive, meaning all my test cases for this method passed. Therefore, more test cases need to be added to kill this mutant.<br>
+
   
 # Report all the statistics and the mutation score for each test class
 - Mutation Score of Range Class - Before<br>

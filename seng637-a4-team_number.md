@@ -101,6 +101,8 @@
 | `SearchInvalidItem` | `assert text` | verifies the presence of "computer monitor" in the text of the queried items |
 | `NavigateToShopByRoom` | `assert title` | The page should successfully navigate to the "Shop by Room" section |
 | `SelectSpecificRoom` | `assert title` | The page should successfully navigate to the "Kitchen" category under "Shop by Room" |
+| `DepartmentMenu` | `assert presence` | The page should successfully display a dropdown menu with various departments |
+| `SelectSpecificItem` | `assert title` | The page should successfully navigate to the "Air Purifiers & Filters" items category under the "Heating & Cooling" department|
 
 
 # how did you test each functionality with different test data
@@ -111,8 +113,10 @@
 |              | Test the presence of customer reviews for a patio item                       |
 | Search bar   | Test search for an item that does not exist using "computer monitor"         |
 |              | Test for a specified toolbox to search                                       |
-| Shop by Room | Test is the "Shop by Room" page appears after clicking on the navlink        |
+| Shop by Room | Test if the "Shop by Room" page appears after clicking on the nav link        |
 |              | Test if kitchen furnishings and appliances appear when clicking on "Kitchen" |
+| Shop by Department | Test if the "Shop by Department" dropdown appears after clicking on the nav link        |
+|              | Test if "Air Purifiers & Filters" appear when routing to "Heating & Cooling" -> "Air Purifiers & Filters" |
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 

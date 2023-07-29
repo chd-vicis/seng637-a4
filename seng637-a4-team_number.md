@@ -119,7 +119,7 @@ We selected X key functionalities of the Home Depot website to test thoroughly. 
 
 | Functionality         | Test Cases                                                            |
 |-----------------------|-----------------------------------------------------------------------|
-| Reviews      | Test if the reviews belong to the correct product                            |
+| Customer Reviews      | Test if the reviews belong to the correct product                            |
 |              | Test the presence of customer reviews for a patio item                       |
 | Search bar   | Test search for an item that does not exist using "computer monitor"         |
 |              | Test for a specified toolbox to search                                       |

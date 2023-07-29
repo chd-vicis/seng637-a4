@@ -131,9 +131,9 @@ We selected X key functionalities of the Home Depot website to test thoroughly. 
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 
-Selenium
+## Selenium
 
-Advantages:
+### Advantages:
 
 - Open Source and Popular: Selenium is an open-source tool, which means it enjoys significant support from a broad community of users. This popularity ensures a wealth of resources and peer support.
 - Extendable: You can expand Selenium's functionality through the use of plugins. This allows for customization to meet unique testing needs.
@@ -141,21 +141,22 @@ Advantages:
 - Ease of Installation: Installing Selenium is straightforward—it primarily involves adding a browser extension.
 Extensive Documentation: Comprehensive documentation is available, simplifying understanding and usage of Selenium.
 
-Disadvantages:
+### Disadvantages:
 
 - Limited to Web Applications: As Selenium is a browser plugin, it cannot test desktop applications.
 - Additional Plugins Required: To identify GUI components, you often need to install additional browser plugins.
 - Website Limitations: Selenium might not support automation on certain websites.
-Sikulix
+  
+## Sikulix
 
-Advantages:
+### Advantages:
 
 - Image Recognition: Sikulix uses image recognition powered by OpenCV to identify GUI components. This feature is beneficial when GUI internals or source code is inaccessible.
 - Text Recognition: Thanks to Tesseract, Sikulix has basic text recognition capabilities, which enables it to search for text in images.
 - Useful for Development Testing: Sikulix can test applications or web apps that are under development.
 - Repetitive Task Automation: Sikulix can automate monotonous tasks.
   
-Disadvantages:
+### Disadvantages:
 
 - Screen Resolution Dependency: Since Sikulix uses OpenCV for image recognition, test cases are dependent on the screen resolution at which they were recorded. As a result, they may not work on screens with different resolutions.
 - Platform-Dependent Scripts: Scripts in Sikulix are platform-dependent, which can limit their portability.

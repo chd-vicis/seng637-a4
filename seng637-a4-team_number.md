@@ -110,6 +110,7 @@ Assertions and checkpoints are vital components of our testing process, utilized
 | `SelectSpecificRoom` | `assert title` | The page should successfully navigate to the "Kitchen" category under "Shop by Room" |
 | `DepartmentMenu` | `assert presence` | The page should successfully display a dropdown menu with various departments |
 | `SelectSpecificItem` | `assert title` | The page should successfully navigate to the "Air Purifiers & Filters" items category under the "Heating & Cooling" department|
+| `ShopInWarehouseValueAndSpecials` | `assert text` | The items chosen products listed in this section should have an indicator of being on sale (such as a discounted price, "sale" or "discount" label)
 
 
 # how did you test each functionality with different test data
@@ -126,6 +127,7 @@ We selected X key functionalities of the Home Depot website to test thoroughly. 
 |              | Test if kitchen furnishings and appliances appear when clicking on "Kitchen" |
 | Shop by Department | Test if the "Shop by Department" dropdown appears after clicking on the nav link        |
 |              | Test if "Air Purifiers & Filters" appear when routing to "Heating & Cooling" -> "Air Purifiers & Filters" |
+| Warehouse Value & Specials | Test if items under "Savings Lighting & Ceiling Fans" are on sale |
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 

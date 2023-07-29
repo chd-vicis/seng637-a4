@@ -71,7 +71,7 @@
    <img width="300" alt="Screenshot 2023-07-29 at 11 57 38 AM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/6c910a28-34d0-4ac9-9530-0305fe198fd6">
 
   Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
-  Note: The mutation score could not be improved by adding more test cases for the original 5 test methods. This is because the original test cases managed to kill every mutant but the equivalent mutants. Therefore, test cases for two more methods were added to improve the mutation score.
+  Note: The mutation score could not be improved enough by just adding more test cases for the original 5 test methods. This is because the original test cases managed to kill almost every mutant but the equivalent mutants. Therefore, test cases for two more methods were added to improve the mutation score.
   |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
   |-------------|----------------------|---------------------|-------|----------------|
   |Range.combine(Range range1, Range range2)| 4 | 29 | 33 | 88 %|

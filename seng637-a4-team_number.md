@@ -97,7 +97,7 @@
 |----------------------------|---------------------------|---------------------------------------------------------------------------------|
 | `VerifyProductReviews` | `assert text` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)). |
 | `NavigateToProductReviews` | `assert element present` | verifies the presence of "Customer Reviews" |
-| `SearchItem` | `assert text` | verifies the presence of an item after searching for it |
+| `SearchItem` | `assert text` | verifies the presence of "Milwaukee Tool PACKOUT 22-inch Rolling Tool Box" after searching for it |
 | `SearchInvalidItem` | `assert text` | verifies the presence of "computer monitor" in the text of the queried items |
 
 
@@ -108,7 +108,7 @@
 | Reviews                 | Test if the reviews belong to the correct product          |
 |                       | Test the presence of customer reviews for a patio item |
 | Search bar    | Test search for an item that does not exist using "computer monitor"                                         |
-|                       | Test "toolbox" for search                                              |
+|                       | Test for a specified toolbox to search                                             |
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 

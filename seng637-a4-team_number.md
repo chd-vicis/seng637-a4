@@ -26,28 +26,28 @@
   ```
   return this.upper - this.lower;
   ```
-  This mutation was including a post-increment operation to the variable upper. However, since the above line of code will still use the original value of the upper for the subtraction and the upper value is only used once in the above line of code, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
+  This mutation was including a post-increment operation to the variable upper. However, since the above line of code will still use the original value of the upper for the subtraction and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
 
 3. Mutation #3 (on line #105, mutation #1)<br>
   Mutation applied by Pitest tool - Incremented (a++) double field lower on method Range.getLowerBound(). This mutant was applied on the following line:
   ```
   return this.lower;
   ```
-  This mutation was including a post-increment operation to the variable lower. However, since the above line of code will still return the original value of the lower variable and the lower variable value is only used once in the above line of code, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
+  This mutation was including a post-increment operation to the variable lower. However, since the above line of code will still return the original value of the lower variable and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
 
 4. Mutation #4 (on line #114, mutation #6)<br>
   Mutation applied by Pitest tool - Incremented (++a) double field upper on method Range.getUpperBound(). This mutant was applied on the following line:
   ```
   return this.upper;
   ```
-  This mutation was including a pre-increment operation to the variable upper. The above statement will now return the original value incremented by 1, affecting the return value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was getUpperBoundWithSameValue(), fed in a range with the upper bound of 0.5 and expected this function getUpperBound() to return 0.5. But, since this mutant was introduced the returned value ended up being 1.5 (++0.5 => 0.5 + 1 = 1.5) and thus resulted in this test case failing, which means the mutant was killed.<br>
+  This mutation was including a pre-increment operation to the variable upper. The above line of code will now return the original value incremented by 1, affecting the return value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was getUpperBoundWithSameValue(), fed in a range with the upper bound of 0.5 and expected this function getUpperBound() to return 0.5. But, since this mutant was introduced the returned value ended up being 1.5 (++0.5 => 0.5 + 1 = 1.5) and thus resulted in this test case failing, which means the mutant was killed.<br>
 
 5. Mutation #5 (on line #217, mutation #4)<br>
   Mutation applied by Pitest tool - removed conditional, replaced equality check with true on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
   ```
   if (range1 == null)
   ```
-  This mutation removed the conditional check and always made the condition output true. The above statement will now result in the range2 always being returned, affecting the return value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was combineWithAUB(), fed in a range1(0.0, 1.1) and a range2(-1.0, 1.0), expected this function combine(Range range1, Range range2) to return a range(-1.0, 1.1). But, since this mutant was introduced the returned value ended up being a range(-1.0, 1.0) (which is just range2) and thus resulted in this test case failing, which means the mutant was killed.<br>
+  This mutation removed the conditional check and always made the condition output true. The above line of code will now result in the range2 always being returned, affecting the return value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was combineWithAUB(), fed in a range1(0.0, 1.1) and a range2(-1.0, 1.0), expected this function combine(Range range1, Range range2) to return a range(-1.0, 1.1). But, since this mutant was introduced the returned value ended up being a range(-1.0, 1.0) (which is just range2) and thus resulted in this test case failing, which means the mutant was killed.<br>
 
 6. Mutation #6 (on line #223, mutation #1)<br>
   Mutation applied by Pitest tool - replaced call to java/lang/Math::min with argument on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
@@ -68,21 +68,21 @@
   ```
   return new Range(l, u);
   ```
-  This mutation was including a post-increment operation to the variable l (assumption not u, not sure what local variable 2 is). However, since the above line of code will still return the original value of l and the variable value is only used once in the above line of code, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>  
+  This mutation was including a post-increment operation to the variable l (assumption not u, not sure what local variable 2 is). However, since the above line of code will still return the original value of l and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>  
 
 9. Mutation #9 (on line #225, mutation #4)<br>
   Mutation applied by Pitest tool - Decremented (a--) double local variable number 4 on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
   ```
   return new Range(l, u);
   ```
-  This mutation was including a post-decrement operation to the variable u (assumption not l, not sure what local variable 4 is). However, since the above line of code will still return the original value of u and the variable value is only used once in the above line of code, this post-decrement operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>   
+  This mutation was including a post-decrement operation to the variable u (assumption not l, not sure what local variable 4 is). However, since the above line of code will still return the original value of u and this variable is only used once in the above line of code, thus this post-decrement operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>   
 
 10. Mutation #10 (on line #475, mutation #1)<br>
   Mutation applied by Pitest tool - Incremented (a++) double field lower on method Range.toString(). This mutant was applied on the following line:
   ```
   return ("Range[" + this.lower + "," + this.upper + "]");
   ```
-  This mutation was including a post-increment operation to the variable lower. However, since the above line of code will still return the original value of lower and the variable value is only used once in the above line of code, this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>   
+  This mutation was including a post-increment operation to the variable lower. However, since the above line of code will still return the original value of lower and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>   
 
   
 # Report all the statistics and the mutation score for each test class

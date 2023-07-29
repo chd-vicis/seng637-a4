@@ -68,13 +68,13 @@
   <img width="600" alt="Screenshot 2023-07-29 at 11 57 57 AM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/4596e3e6-b55f-44d0-9c02-d5797f5dbaae">
 
 - Mutation Statistics of Range Class - After<br>
- <img width="300" alt="Screenshot 2023-07-29 at 11 57 38 AM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/6c910a28-34d0-4ac9-9530-0305fe198fd6">
+   <img width="300" alt="Screenshot 2023-07-29 at 11 57 38 AM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/6c910a28-34d0-4ac9-9530-0305fe198fd6">
 
   Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
   Note: The mutation score could not be improved by adding more test cases for the original 5 test methods. This is because the original test cases managed to kill every mutant but the equivalent mutants. Therefore, test cases for two more methods were added to improve the mutation score.
   |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
   |-------------|----------------------|---------------------|-------|----------------|
-  |Range.combine(Range range1, Range range2)| 6 | 27 | 33 | 82 %|
+  |Range.combine(Range range1, Range range2)| 4 | 29 | 33 | 88 %|
   |Range.toString()                         | 4 | 18 | 22 | 82% |
   |Range.getLength()                        | 4 | 15 | 19 | 79% |
   |Range.getLowerBound()                    | 1 | 6 | 7 | 86% |

@@ -93,6 +93,15 @@
 
 # Explain the use of assertions and checkpoints
 
+| Name of Test               | Assertion                   | Verification Checkpoints                                                        |
+|----------------------------|---------------------------|---------------------------------------------------------------------------------|
+| ``   | ``  |                         |
+| `` | ``  |    |
+| ``       | ``  |                                       |
+| ``       | ``             |                               |
+| ``              | ``             |                               |
+
+
 # how did you test each functionaity with different test data
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix

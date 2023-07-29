@@ -95,20 +95,24 @@
 
 | Name of Test               | Command (Assert)                   | Verification Checkpoints                                                        |
 |----------------------------|---------------------------|---------------------------------------------------------------------------------|
-| `VerifyProductReviews` | `assert text` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)). |
+| `VerifyProductReviews` | `assert text` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)) |
 | `NavigateToProductReviews` | `assert element present` | verifies the presence of "Customer Reviews" |
 | `SearchItem` | `assert text` | verifies the presence of "Milwaukee Tool PACKOUT 22-inch Rolling Tool Box" after searching for it |
 | `SearchInvalidItem` | `assert text` | verifies the presence of "computer monitor" in the text of the queried items |
+| `NavigateToShopByRoom` | `assert title` | The page should successfully navigate to the "Shop by Room" section |
+| `SelectSpecificRoom` | `assert title` | The page should successfully navigate to the "Kitchen" category under "Shop by Room" |
 
 
 # how did you test each functionality with different test data
 
 | Functionality         | Test Cases                                                            |
 |-----------------------|-----------------------------------------------------------------------|
-| Reviews                 | Test if the reviews belong to the correct product          |
-|                       | Test the presence of customer reviews for a patio item |
-| Search bar    | Test search for an item that does not exist using "computer monitor"                                         |
-|                       | Test for a specified toolbox to search                                             |
+| Reviews      | Test if the reviews belong to the correct product                            |
+|              | Test the presence of customer reviews for a patio item                       |
+| Search bar   | Test search for an item that does not exist using "computer monitor"         |
+|              | Test for a specified toolbox to search                                       |
+| Shop by Room | Test is the "Shop by Room" page appears after clicking on the navlink        |
+|              | Test if kitchen furnishings and appliances appear when clicking on "Kitchen" |
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 

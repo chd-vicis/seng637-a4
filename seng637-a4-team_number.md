@@ -93,13 +93,10 @@
 
 # Explain the use of assertions and checkpoints
 
-| Name of Test               | Assertion                   | Verification Checkpoints                                                        |
+| Name of Test               | Command (Assert)                   | Verification Checkpoints                                                        |
 |----------------------------|---------------------------|---------------------------------------------------------------------------------|
-| ``   | ``  |                         |
-| `` | ``  |    |
-| ``       | ``  |                                       |
-| ``       | ``             |                               |
-| ``              | ``             |                               |
+| `VerifyProductReviews` | `assert text` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)). |
+| `NavigateToProductReviews` | 'assert element present' | verifies the presence of "Customer Reviews" |
 
 
 # how did you test each functionaity with different test data

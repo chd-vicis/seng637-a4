@@ -119,6 +119,21 @@ This report presents the findings of the team's work on mutation testing and aut
   |Range.getUpperBound()                    | 1 | 6 | 7 | 86% |
   |Range.contains(double value)             | 8 | 45 | 53 | 85% |
   |Range.intersects(double b0, double b1)   | 22 | 84 | 106 | 79% |
+
+- Mutation Score of DataUtilities Class - Before<br>
+  <img width="600" alt="Screenshot 2023-07-30 at 3 18 44 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/ff9ce15f-fe26-450b-8283-4d5f3c477276">
+<br>
+- Mutation Statistics of DataUtilities Class - Before<br>
+  <img width="300" alt="Screenshot 2023-07-30 at 3 19 12 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/44dd855e-c9e2-424b-b105-8e95e91876fd">
+<br>
+  Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
+  |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
+  |-------------|----------------------|---------------------|-------|----------------|
+  |Range.combine(Range range1, Range range2)| 6 | 27 | 33 | 82 %|
+  |Range.toString()| 4 | 18 | 22 | 82% |
+  |Range.getLength()| 4 | 15 | 19 | 79% |
+  |Range.getLowerBound()| 1 | 6 | 7 | 86% |
+  |Range.getUpperBound()| 1 | 6 | 7 | 86% |
   
 
 # Analysis drawn on the effectiveness of each of the test classes

@@ -184,8 +184,7 @@ Assertions and checkpoints are vital components of our testing process, utilized
 | `SignInDetails`                  | `assert text`                      | Verifies user information in account details after signing in
 | `AddItemNavigate`                | `assert title`                     | The page should successfully navigate to the item's detail page                                                   |
 | `AddItemToCart`                  | `assert text`           | Verifies that the "Add to Cart" button is present and can be clicked                                              |
-| `ChangeStoreNavigate`            | `assert title`                     | The page should successfully navigate to the "Change Store" section                                               |
-| `ChangeStoreLocation`            | `assert text`           | Verifies the address input field and "Search" button are present on the page                                      |
+| `ChangeStoreNavigate`            | `assert title`                     | The page should successfully navigate to the "Change Store" section                                               |                                      |
 | `ChangeStoreSelection`           | `assert text`                      | Verifies that the first store from the search results matches the address provided                                |
 | `HomeServicesNavigate`   | `assert title`                     | The page should successfully navigate to the "Home Services" section                                               |
 | `FindHomeService`           | `assert element present`           | Finds contact information for the Home Service after searching |

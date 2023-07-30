@@ -159,6 +159,21 @@ Disadvantages
 3. Computational Expense: Mutation testing can be computationally expensive compared to other test suites because each test is effectively executed multiple times. While this may not be an issue for small test suites like in this assignment, it can become impractical and time-consuming for larger test suites
 
 # Explain your SELENUIM test case design process
+Our test case design process started with a clear understanding of the application's functionality and the specific actions or operations we needed to validate. This understanding was fundamental to ensuring we can effectively simulate the end-user's behavior.
+
+The Selenium test case design process involves the following steps:
+
+1. **Defining the Scope of Testing:** Before we began with the design process, we identified the functionalities of the Home Depot website that were critical and required testing. This helped us narrow down our focus and design meaningful test cases. The functionalities we decided to test included user sign-in, item search, navigating through different categories, adding an item to cart, changing the store, etc.
+
+2. **Test Recording:** After defining our scope, we moved on to recording our tests. This was performed using Selenium IDE's 'Record' function. With the record feature turned on, we navigated to the Home Depot site in our browser and began performing the various actions corresponding to our scope. For instance, we searched for a product, navigated to its details, added it to the cart, and proceeded to checkout. Selenium IDE recorded all these interactions.
+
+3. **Inserting Assertions:** Once the actions were recorded, we inserted assertions in our test cases at crucial points. Assertions are used to validate the state of the application with what's expected. For example, we might assert the presence of an element, the content of a field, the current URL, or the title of the page.
+
+4. **Test Playback:** After the test was recorded and assertions were inserted, we replayed the test to validate the correctness of the test and to see if it's working as expected. This was done using the 'Play' feature in Selenium IDE.
+
+5. **Modifying and Refining Test Cases:** Often, the recorded test may not work flawlessly in the first go. We encountered situations where we needed to adjust timing (wait for a certain element to load), modify selectors (to make them more reliable), or reorder some steps. We refined our tests in these cases to ensure they were robust and reliable.
+
+6. **Testing with Different Data:** Finally, we ran our tests with different sets of data. For instance, we tested the login functionality with both valid and invalid credentials to ensure the functionality behaves correctly in both cases.
 
 # Explain the use of assertions and checkpoints
 

@@ -11,7 +11,247 @@
 | Christopher DiMattia                |
 
 # Introduction
-In this assignment mutation testing and well as web app testing was practised and analyzed.  Mutation testing was performed on the same Range and DataUtilties class as the previous assignments, while the automated web app testing was performed on ABC website with the Selenium library.  The team learned valuable lessons about mutation testing as well as automation testing and was able to overcome challenges related to both.
+**SENG 637 - Dependability and Reliability of Software Systems**
+
+**Lab. Report \#4 – Mutation Testing and Web app testing**
+
+| Group: SENG637- 2   |
+|-----------------|
+| Jash Dubal                |   
+| Steven Duong              |   
+| Nikhil Naikar               |   
+| Jason Xu                |
+| Christopher DiMattia                |
+
+# Introduction
+This report presents the findings of the team's work on mutation testing and automated web app testing. The team focused on applying mutation testing to the Range and DataUtilties classes and performed web app testing on the ABC website using the Selenium library. Throughout the process, the team encountered challenges and learned valuable lessons related to both mutation testing and automated testing, which are discussed in detail below.
+
+
+
+# Analysis of 10 Mutants of the Range class 
+1. Mutation #1 (on line #123, mutation #5)<br>
+  Mutation applied by Pitest tool - Replaced double subtraction with addition on method Range.getLength(). This mutant was applied on the following line:
+  ```
+  return this.upper - this.lower;
+  ```
+  This mutation was an arithmetic operator replacement since it replaced the "-" with "+", adding the two variables instead of subtracting them, affecting the returned value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was testGetLengthValidRange(), fed in a range with the lower bound being -1 and the upper bound being 1 and expected this function getLength() to return  2 (1 - (-1) = 2). Therefore, since this mutant was introduced the result ended up being 0 (1 + (-1) = 0) and thus resulted in this test case failing, which means the mutant was killed.<br>
+  
+2. Mutation #2 (on line #123, mutation #1)<br>
+  Mutation applied by Pitest tool - Incremented (a++) double field upper on method Range.getLength(). This mutant was applied on the following line:
+  ```
+  return this.upper - this.lower;
+  ```
+  This mutation was including a post-increment operation to the variable upper. However, since the above line of code will still use the original value of the upper for the subtraction and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
+
+3. Mutation #3 (on line #105, mutation #1)<br>
+  Mutation applied by Pitest tool - Incremented (a++) double field lower on method Range.getLowerBound(). This mutant was applied on the following line:
+  ```
+  return this.lower;
+  ```
+  This mutation was including a post-increment operation to the variable lower. However, since the above line of code will still return the original value of the lower variable and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>
+
+4. Mutation #4 (on line #114, mutation #6)<br>
+  Mutation applied by Pitest tool - Incremented (++a) double field upper on method Range.getUpperBound(). This mutant was applied on the following line:
+  ```
+  return this.upper;
+  ```
+  This mutation was including a pre-increment operation to the variable upper. The above line of code will now return the original value incremented by 1, affecting the return value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was getUpperBoundWithSameValue(), fed in a range with the upper bound of 0.5 and expected this function getUpperBound() to return 0.5. But, since this mutant was introduced the returned value ended up being 1.5 (++0.5 => 0.5 + 1 = 1.5) and thus resulted in this test case failing, which means the mutant was killed.<br>
+
+5. Mutation #5 (on line #217, mutation #4)<br>
+  Mutation applied by Pitest tool - removed conditional, replaced equality check with true on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
+  ```
+  if (range1 == null)
+  ```
+  This mutation removed the conditional check and always made the condition output true. The above line of code will now result in the range2 always being returned, affecting the return value. This mutant was successfully killed by some of the test cases. For example, one test case that killed this mutant was combineWithAUB(), fed in a range1(0.0, 1.1) and a range2(-1.0, 1.0), expected this function combine(Range range1, Range range2) to return a range(-1.0, 1.1). But, since this mutant was introduced the returned value ended up being a range(-1.0, 1.0) (which is just range2) and thus resulted in this test case failing, which means the mutant was killed.<br>
+
+6. Mutation #6 (on line #223, mutation #1)<br>
+  Mutation applied by Pitest tool - replaced call to java/lang/Math::min with argument on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
+  ```
+  double l = Math.min(range1.getLowerBound(), range2.getLowerBound());
+  ```
+  This mutation removed the Math.min function and with assumption assigned variable l either the first argument (range1.getLowerBound()) or the second (range2.getLowerBound()). This mutant does affect the returned value and could potentially return an incorrect result. However, this mutant managed to survive, meaning all my test cases for this method passed. Therefore, more test cases need to be added to kill this mutant.<br>
+
+7. Mutation #7 (on line #223, mutation #2 & #3)<br>
+  Mutation applied by Pitest tool  - removed call to org/jfree/data/Range::getLowerBound on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
+  ```
+  double l = Math.min(range1.getLowerBound(), range2.getLowerBound());
+  ```
+  This mutation affects the returned value and could potentially return an incorrect result. Also, this same mutation happened twice but strangely the first time it survived, and the second time it was killed. Therefore, more test cases need to be added to ensure that all occurrences of this type of mutant are caught and killed.<br> 
+
+8. Mutation #8 (on line #225, mutation #1)<br>
+  Mutation applied by Pitest tool - Incremented (a++) double local variable number 2 on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
+  ```
+  return new Range(l, u);
+  ```
+  This mutation was including a post-increment operation to the variable l (assumption not u, not sure what local variable 2 is). However, since the above line of code will still return the original value of l and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>  
+
+9. Mutation #9 (on line #225, mutation #4)<br>
+  Mutation applied by Pitest tool - Decremented (a--) double local variable number 4 on method Range.combine(Range range1, Range range2). This mutant was applied on the following line:
+  ```
+  return new Range(l, u);
+  ```
+  This mutation was including a post-decrement operation to the variable u (assumption not l, not sure what local variable 4 is). However, since the above line of code will still return the original value of u and this variable is only used once in the above line of code, thus this post-decrement operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>   
+
+10. Mutation #10 (on line #475, mutation #1)<br>
+  Mutation applied by Pitest tool - Incremented (a++) double field lower on method Range.toString(). This mutant was applied on the following line:
+  ```
+  return ("Range[" + this.lower + "," + this.upper + "]");
+  ```
+  This mutation was including a post-increment operation to the variable lower. However, since the above line of code will still return the original value of lower and this variable is only used once in the above line of code, thus this post-increment operation has no effect on the returned value. Therefore, this mutation introduces an equivalent mutant that can not be killed and thus survived.<br>   
+
+  
+# Report all the statistics and the mutation score for each test class
+- Mutation Score of Range Class - Before<br>
+  <img width="600" alt="Screenshot 2023-07-26 at 5 24 32 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/88955810-62c9-4fc0-ab4a-37eea388738f"><br>
+- Mutation Statistics of Range Class - Before<br>
+  <img width="300" alt="Screenshot 2023-07-26 at 5 25 34 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/c591613f-c6f5-47a4-bf51-5d1d9dcf99cb"><br>
+  Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
+  |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
+  |-------------|----------------------|---------------------|-------|----------------|
+  |Range.combine(Range range1, Range range2)| 6 | 27 | 33 | 82 %|
+  |Range.toString()| 4 | 18 | 22 | 82% |
+  |Range.getLength()| 4 | 15 | 19 | 79% |
+  |Range.getLowerBound()| 1 | 6 | 7 | 86% |
+  |Range.getUpperBound()| 1 | 6 | 7 | 86% |
+  
+- Mutation Score of Range Class - After<br>
+  <img width="600" alt="Screenshot 2023-07-29 at 11 57 57 AM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/4596e3e6-b55f-44d0-9c02-d5797f5dbaae">
+
+- Mutation Statistics of Range Class - After<br>
+   <img width="300" alt="Screenshot 2023-07-29 at 11 57 38 AM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/6c910a28-34d0-4ac9-9530-0305fe198fd6">
+
+  Since only 5 methods out of the 15 total methods in the Range class were tested, the Mutation Score mentioned above is not accurate. The following table shows the mutation score for each of the 5 tested methods.
+  Note: The mutation score could not be improved enough by just adding more test cases for the original 5 test methods. This is because the original test cases managed to kill almost every mutant but the equivalent mutants. Therefore, test cases for two more methods were added to improve the mutation score.
+  |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
+  |-------------|----------------------|---------------------|-------|----------------|
+  |Range.combine(Range range1, Range range2)| 4 | 29 | 33 | 88 %|
+  |Range.toString()                         | 4 | 18 | 22 | 82% |
+  |Range.getLength()                        | 4 | 15 | 19 | 79% |
+  |Range.getLowerBound()                    | 1 | 6 | 7 | 86% |
+  |Range.getUpperBound()                    | 1 | 6 | 7 | 86% |
+  |Range.contains(double value)             | 8 | 45 | 53 | 85% |
+  |Range.intersects(double b0, double b1)   | 22 | 84 | 106 | 79% |
+  
+
+# Analysis drawn on the effectiveness of each of the test classes
+The effectiveness of each method was significantly improved if it had no previous test cases, or only slightly improved if it already had existing test cases from previous assignments. The mutation score for methods with previous test cases was already high (79-86%) due to extensive testing in earlier assignments. However, the majority of the mutants that were not killed were equivalent mutants, which by definition, do not affect the software's functionality and are therefore very difficult to eliminate.  The equivalent mutants made up all the unkillable mutants after the team could no longer improve their mutant score.
+
+Due to the difficultly in reaching the 10% improvement requirement from the assignment outline the team decided to include other functions within the tested classes to reach a higher overall test score. Interestingly, the other methods also achieved peak test scores in the 79-86% range, indicating that equivalent mutants accounted for roughly 14-21% of the mutants.  Overall the team waas able to easily identify why certain mutants survived and if the mutant was killable or an equivalent mutant.  The team also managed to obtain  high mutation scores with the lowest being 79% and high overall scores typically in the mid 80s. 
+
+# A discussion on the effect of equivalent mutants on mutation score accuracy
+Equivalent mutants had a negative impact on the mutation score. As mentioned above these mutants by definition, do not affect the behavior of the SUT, making it impossible to eliminate them easily. A prominent example as mentioned above was the post-increment operator, which cannot be easily killed because it only affects the return value of a method after it is already tested.  More generally, dealing with equivalent mutants poses significant challenges because they require more complex testing approaches or the creation of tests beyond the usual scope. One possible way to catch an equivalent mutant like the post-increment operator is to design a test that not only returns the function but also utilizes its output in subsequent operations which is discussed more below. However, this approach leads to the expansion of test cases beyond the typical domain in which they are tested, making it less practical.
+
+Manual review is another approach to handle equivalent mutants. Testers would carefully assess the impact of equivalent mutants on the program. However, this method has its drawbacks as it can be time consuming, tedious, error-prone, and may lead to misjudgments due to factors like testers lacking contextual knowledge of the program or changes in the program's scope. Additionally, human factors such as fatigue can also contribute to errors in the review process.
+
+In general equivalent mutants will lower the mutation score and it is recommended that more advanced testing be applied to kill mutants such as writing tests that may have an expanded scope, limit the types of mutant operators that can be applied to a test or apply more complex analysis of mutant results to isolate mutant equivalents and remove them from the mutant score.  Upon researching how to kill equivalent mutants the team found several interesting papers and softwares but the two most interesting papers are listed below.
+1. https://www.sciencedirect.com/science/article/pii/S0167642314002603
+2. https://www.sciencedirect.com/science/article/pii/S0167642314002603
+
+
+# A discussion of what could have been done to improve the mutation score of the test suites
+As mentioned earlier, the mutation test scores for the methods covered in previous assignments had very few non-equivalent mutants. The team faced significant challenges in improving the mutant test score by more than 10%. Consequently, the team decided to address this issue by adding additional tests to the Range and DataUtiltites class, which resulted in an overall improvement in the test score.
+
+The primary obstacle was dealing with equivalent mutants, which could not be eliminated without employing much more complex test cases. However, for non-equivalent mutants, the team adopted a straightforward approach. They thoroughly analyzed each mutant and then introduced additional tests based on the method's functionality to effectively detect and eliminate the non-equivalent mutants.
+
+One of the suggestions brought up by the team to detect equivalent mutants was to combine test cases with simple operations or even other test cases. For example, when testing the "getUpperBound" method, the team could have designed a test to check if the upper bound was returned correctly after being added to a known value. This approach could have helped catch the equivalent mutant that involves post increment operators.
+
+However, implementing such testing can lead to complicating the test cases and may violate the principle that tests should focus solely on their immediate functionality. In other words, tests should not be designed to verify unrelated methods, regardless of how straightforward they are. This could create unnecessary dependencies between tests and reduce the maintainability and clarity of the test suite. Therefore, the team did not pursue this approach, opting to find other ways to improve the mutation score without compromising the test suite's integrity.
+
+
+# Why do we need mutation testing? Advantages and disadvantages of mutation testing
+
+Advantages
+1. Automation: Mutant testing is automated, enabling quick execution compared to exploratory or manual testing
+2. Fault Detection: It provides an efficient way to detect faults in the code because it is white-box, so error are found right away compared to black-box testing
+3. Benchmarking: Mutation testing is useful for benchmarking other testing methods. A high mutation test score indicates well-designed tests, and analyzing test suites using various testing methods enhances the tester's confidence in having a comprehensive test suite.
+
+Disadvantages
+1. Impact of Equivalent Mutations: Equivalent mutations can skew scores and make it challenging to interpret test results without an in-depth understanding of the test suite and the applied mutants
+2. Manual Review for Equivalent Mutants: Identifying killable mutants versus equivalent mutants often requires manual review, which is time-consuming and susceptible to human error
+3. Computational Expense: Mutation testing can be computationally expensive compared to other test suites because each test is effectively executed multiple times. While this may not be an issue for small test suites like in this assignment, it can become impractical and time-consuming for larger test suites
+
+# Explain your SELENUIM test case design process
+
+# Explain the use of assertions and checkpoints
+
+Assertions and checkpoints are vital components of our testing process, utilized to confirm if a software or website behaves as intended. They function as validation checks, validating whether particular conditions or outcomes are achieved during the testing procedure.
+
+**Assertions:** These are the conditions that we are checking during our test execution. For instance, in the `VerifyProductReviews` test, we're asserting (using assert text) that the text of the reviews displayed matches the text we expect for the specific product ("DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)"). In the `NavigateToProductReviews` test, we're asserting (using assert element present) that the "Customer Reviews" element is present on the page. Basically, assertions help us to determine whether a test has passed or failed based on the boolean outcome (true or false) of the condition checked.
+
+**Verification Checkpoints:** These are the anticipated outcomes that our assertions aim to verify. For example, in the `NavigateToShopByRoom` test, the verification checkpoint is that the page successfully navigates to the "Shop by Room" section. This is what we expect to happen when the test is executed correctly, and it's what we're confirming with our assert title command. Similarly, for the `SelectSpecificRoom` test, the verification checkpoint is the successful navigation to the "Kitchen" category under "Shop by Room". Each verification checkpoint aligns with a specific assertion in our test, serving as an indicator of the test's success.
+
+
+| Name of Test               | Command (Assert)                   | Verification Checkpoints                                                        |
+|----------------------------|---------------------------|---------------------------------------------------------------------------------|
+| `VerifyProductReviews` | `assert text` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)) |
+| `NavigateToProductReviews` | `assert element present` | verifies the presence of "Customer Reviews" |
+| `SearchItem` | `assert text` | verifies the presence of "Milwaukee Tool PACKOUT 22-inch Rolling Tool Box" after searching for it |
+| `SearchInvalidItem` | `assert text` | verifies the presence of "computer monitor" in the text of the queried items |
+| `NavigateToShopByRoom` | `assert title` | The page should successfully navigate to the "Shop by Room" section |
+| `SelectSpecificRoom` | `assert title` | The page should successfully navigate to the "Kitchen" category under "Shop by Room" |
+| `DepartmentMenu` | `assert presence` | The page should successfully display a dropdown menu with various departments |
+| `SelectSpecificItem` | `assert title` | The page should successfully navigate to the "Air Purifiers & Filters" items category under the "Heating & Cooling" department|
+| `ShopInWarehouseValueAndSpecials` | `assert text` | The items chosen products listed in this section should have an indicator of being on sale (such as a discounted price, "sale" or "discount" label)
+
+
+# how did you test each functionality with different test data
+
+We selected X key functionalities of the Home Depot website to test thoroughly. For each functionality, we developed test cases using Selenium IDE. The table below covers the test cases that we developed:
+
+| Functionality         | Test Cases                                                            |
+|-----------------------|-----------------------------------------------------------------------|
+| Customer Reviews      | Test if the reviews belong to the correct product                            |
+|              | Test the presence of customer reviews for a patio item                       |
+| Search bar   | Test search for an item that does not exist using "computer monitor"         |
+|              | Test for a specified toolbox to search                                       |
+| Shop by Room | Test if the "Shop by Room" page appears after clicking on the nav link        |
+|              | Test if kitchen furnishings and appliances appear when clicking on "Kitchen" |
+| Shop by Department | Test if the "Shop by Department" dropdown appears after clicking on the nav link        |
+|              | Test if "Air Purifiers & Filters" appear when routing to "Heating & Cooling" -> "Air Purifiers & Filters" |
+| Warehouse Value & Specials | Test if items under "Savings Lighting & Ceiling Fans" are on sale |
+
+# Discuss advantages and disadvantages of Selenium vs. Sikulix
+
+## Selenium
+
+### Advantages:
+
+- Open Source and Popular: Selenium is an open-source tool, which means it enjoys significant support from a broad community of users. This popularity ensures a wealth of resources and peer support.
+- Extendable: You can expand Selenium's functionality through the use of plugins. This allows for customization to meet unique testing needs.
+- Language Support: Selenium supports a wide range of programming languages, providing flexibility in its usage.
+- Ease of Installation: Installing Selenium is straightforward—it primarily involves adding a browser extension.
+Extensive Documentation: Comprehensive documentation is available, simplifying understanding and usage of Selenium.
+
+### Disadvantages:
+
+- Limited to Web Applications: As Selenium is a browser plugin, it cannot test desktop applications.
+- Additional Plugins Required: To identify GUI components, you often need to install additional browser plugins.
+- Website Limitations: Selenium might not support automation on certain websites.
+  
+## Sikulix
+
+### Advantages:
+
+- Image Recognition: Sikulix uses image recognition powered by OpenCV to identify GUI components. This feature is beneficial when GUI internals or source code is inaccessible.
+- Text Recognition: Thanks to Tesseract, Sikulix has basic text recognition capabilities, which enables it to search for text in images.
+- Useful for Development Testing: Sikulix can test applications or web apps that are under development.
+- Repetitive Task Automation: Sikulix can automate monotonous tasks.
+  
+### Disadvantages:
+
+- Screen Resolution Dependency: Since Sikulix uses OpenCV for image recognition, test cases are dependent on the screen resolution at which they were recorded. As a result, they may not work on screens with different resolutions.
+- Platform-Dependent Scripts: Scripts in Sikulix are platform-dependent, which can limit their portability.
+- Error Handling: Handling runtime errors can be challenging, especially during long script runs.
+- Less Community Support: Sikulix is less popular than Selenium, which results in reduced community support.
+- Poor Documentation: Sikulix's documentation is not as comprehensive as Selenium's, which could hinder its usage and understanding.
+
+# How the team work/effort was divided and managed
+
+
+# Difficulties encountered, challenges overcome, and lessons learned
+
+# Comments/feedback on the lab itself
+
 
 # Analysis of 10 Mutants of the Range class 
 1. Mutation #1 (on line #123, mutation #5)<br>

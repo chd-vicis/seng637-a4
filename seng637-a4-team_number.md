@@ -239,6 +239,7 @@ Extensive Documentation: Comprehensive documentation is available, simplifying u
 - Limited to Web Applications: As Selenium is a browser plugin, it cannot test desktop applications.
 - Additional Plugins Required: To identify GUI components, you often need to install additional browser plugins.
 - Website Limitations: Selenium might not support automation on certain websites.
+- Manual Adjustment of Execution Speed: Selenium tests may require manual adjustments to the timing and speed of execution to handle dynamic content and ensure that elements are fully loaded and interactive before they're interacted with. This can be tricky, as the optimal wait time can vary widely based on factors like network latency, server response time, client-side rendering time, etc. This means that test scripts might need to be adjusted on a case-by-case basis, which can increase the complexity and maintenance overhead of the test suite.
   
 ## Sikulix
 

@@ -295,4 +295,10 @@ We divided this task as instructed in the assignment. Each team member was respo
 
 # Difficulties encountered, challenges overcome, and lessons learned
 
+Difficulties and Challenges
+
+1. One challenge was handling iframes and pop-up windows, as Selenium can interact only with the currently focused window or frame. We had to learn how to correctly switch focus to handle these situations.
+
 # Comments/feedback on the lab itself
+
+1. The lab was a valuable and practical learning experience that allowed us to apply theoretical knowledge of Selenium in a real-world scenario. The practical exposure to automated testing using Selenium was extremely beneficial, providing firsthand experience in handling various web components and situations.

@@ -183,12 +183,12 @@ Assertions and checkpoints are vital components of our testing process, utilized
 | `SignInNavigate`                 | `assert element present`           | The page should successfully navigate to the "Sign In" section                                                    |
 | `SignInDetails`                  | `assert text`                      | Verifies user information in account details after signing in
 | `AddItemNavigate`                | `assert title`                     | The page should successfully navigate to the item's detail page                                                   |
-| `AddItemToCart`                  | `assert element present`           | Verifies that the "Add to Cart" button is present and can be clicked                                              |
+| `AddItemToCart`                  | `assert text`           | Verifies that the "Add to Cart" button is present and can be clicked                                              |
 | `ChangeStoreNavigate`            | `assert title`                     | The page should successfully navigate to the "Change Store" section                                               |
-| `ChangeStoreLocation`            | `assert element present`           | Verifies the address input field and "Search" button are present on the page                                      |
+| `ChangeStoreLocation`            | `assert text`           | Verifies the address input field and "Search" button are present on the page                                      |
 | `ChangeStoreSelection`           | `assert text`                      | Verifies that the first store from the search results matches the address provided                                |
-| `SubscribeWeeklyFlyerNavigate`   | `assert title`                     | The page should successfully navigate to the "Weekly Flyer" section                                               |
-| `SubscribeWeeklyFlyer`           | `assert element present`           | Verifies that the subscription input fields (such as email or phone number) and the "Subscribe" button are present |
+| `HomeServicesNavigate`   | `assert title`                     | The page should successfully navigate to the "Home Services" section                                               |
+| `FindHomeService`           | `assert element present`           | Finds contact information for the Home Service after searching |
 | `SearchWeeklyFlyerNavigate`      | `assert title`                     | The page should successfully navigate to the "Weekly Flyer" section                                               |
 | `SearchValidItemWeeklyFlyer`     | `assert text`                      | Verifies that the valid item appears in the search results                                                        |
 | `SearchInvalidItemWeeklyFlyer`   | `assert text`                      | Verifies that the invalid item does not appear in the search results and an appropriate error message is displayed |
@@ -216,9 +216,9 @@ We selected X key functionalities of the Home Depot website to test thoroughly. 
 | Change Store                  | Test if the "Change Store" page appears after clicking on the nav link                               |
 |                               | Test if user can enter a new location (e.g., address, city, postal code, etc.)                       |
 |                               | Test if user can select the first store from the search results based on the new location            |
-| Subscribe in Weekly Flyer     | Test if the "Weekly Flyer" page appears after clicking on the nav link                               |
-|                               | Test if user can subscribe to the weekly flyer by entering valid details (e.g., email, phone number) |
-| Search in Weekly Flyer        | Test if the "Weekly Flyer" page appears after clicking on the nav link                               |
+| Find Home Service     | Test if the "Home Services" page appears and offeres a search option after visiting page                               |
+|                               | Test if we can get information about the specified Home Service |
+| Search in Weekly Flyer        | Test if the "Weekly Flyer" page appears after visiting page                               |
 |                               | Test if user can search for a valid item (e.g., "Garden Hose") and see the item in the search results |
 |                               | Test if user can search for an invalid item (e.g., "Alien Spaceship") and receive any results   |
 

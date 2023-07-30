@@ -278,7 +278,7 @@ Extensive Documentation: Comprehensive documentation is available, simplifying u
 # How the team work/effort was divided and managed
 
 GUI Testing    
-We divided this task as instructed in the assignment. Each team member was responsible for writing at least two Selenium tests.
+We divided this task as instructed in the assignment. Each team member was responsible for writing two Selenium test cases.
 
 | Test cases            | Taken by: |
 |-----------------------|-----------|

@@ -209,6 +209,18 @@ We selected X key functionalities of the Home Depot website to test thoroughly. 
 | Shop by Department | Test if the "Shop by Department" dropdown appears after clicking on the nav link        |
 |              | Test if "Air Purifiers & Filters" appear when routing to "Heating & Cooling" -> "Air Purifiers & Filters" |
 | Warehouse Value & Specials | Test if items under "Savings Lighting & Ceiling Fans" are on sale |
+| Sign Up                       | Test if the "Sign Up" page appears after clicking on the nav link                                   |
+|                               | Test if user can register by entering valid details (e.g., username, password, email, etc.)          |
+| Add Item to Cart              | Test if the product detail page appears after clicking on a specific item                            |
+|                               | Test if the item can be added to the cart by clicking on the "Add to Cart" button                    |
+| Change Store                  | Test if the "Change Store" page appears after clicking on the nav link                               |
+|                               | Test if user can enter a new location (e.g., address, city, postal code, etc.)                       |
+|                               | Test if user can select the first store from the search results based on the new location            |
+| Subscribe in Weekly Flyer     | Test if the "Weekly Flyer" page appears after clicking on the nav link                               |
+|                               | Test if user can subscribe to the weekly flyer by entering valid details (e.g., email, phone number) |
+| Search in Weekly Flyer        | Test if the "Weekly Flyer" page appears after clicking on the nav link                               |
+|                               | Test if user can search for a valid item (e.g., "Garden Hose") and see the item in the search results |
+|                               | Test if user can search for an invalid item (e.g., "Alien Spaceship") and receive any results   |
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 

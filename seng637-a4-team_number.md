@@ -133,7 +133,22 @@ This report presents the findings of the team's work on mutation testing and aut
   |DataUtilities.createNumberArray2D(double[][] data)            | 2 | 42 | 44 | 95% |
   |DataUtilities.getCumulativePercentages(KeyedValues data)      | 8 | 117 | 125 | 94% |
   
-
+  - Mutation Score of DataUtilities Class - After<br>
+  <img width="810" alt="Screenshot 2023-07-30 at 4 23 59 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/32689fdd-1d67-4f7d-9057-73b8de6a24d3"><br>
+- Mutation Statistics of DataUtilities Class - After<br>
+  <img width="200" alt="Screenshot 2023-07-30 at 4 24 15 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/7d41a5bd-ba6d-4c57-b950-c8303e286a6a"><br>
+  The following table shows the mutation score for each of the 5 tested methods. Note: The mutation score could not be improved enough by just adding more test cases for the original 5 test methods. This is because the original test cases managed to kill almost every mutant but the equivalent mutants. Therefore, test cases for one more method were added to improve the mutation score.
+  |Tested Method| # of Survived Mutants| # of Killed Mutants | Total | Mutation Score |
+  |-------------|----------------------|---------------------|-------|----------------|
+  |DataUtilities.calculateColumnTotal(Values2D data, int column) | 6 | 61 | 67 | 91%|
+  |DataUtilities.calculateRowTotal(Values2D data, int row)       | 6 | 61 | 67 | 91% |
+  |DataUtilities.createNumberArray(double[] data)                | 4 | 34 | 38 | 89% |
+  |DataUtilities.createNumberArray2D(double[][] data)            | 2 | 42 | 44 | 95% |
+  |DataUtilities.getCumulativePercentages(KeyedValues data)      | 8 | 117 | 125 | 94% |
+  |DataUtilities.ccalculateColumnTotal(Values2D data, int column, int[] validRows) | 15 | 76 | 91 | 84%|
+  
+  
+  
 # Analysis drawn on the effectiveness of each of the test classes
 The effectiveness of each method was significantly improved if it had no previous test cases, or only slightly improved if it already had existing test cases from previous assignments. The mutation score for methods with previous test cases was already high (79-86%) due to extensive testing in earlier assignments. However, the majority of the mutants that were not killed were equivalent mutants, which by definition, do not affect the software's functionality and are therefore very difficult to eliminate.  The equivalent mutants made up all the unkillable mutants after the team could no longer improve their mutant score.
 

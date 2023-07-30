@@ -186,13 +186,13 @@ Assertions and checkpoints are vital components of our testing process, utilized
 
 | Name of Test               | Command (Assert)                   | Verification Checkpoints                                                        |
 |----------------------------|---------------------------|---------------------------------------------------------------------------------|
-| `VerifyProductReviews` | `assert text` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)) |
-| `NavigateToProductReviews` | `assert element present` | verifies the presence of "Customer Reviews" |
+| `VerifyProductReviews` | `assert element present` | verifies if the reviews displayed belong to the correct product (DEWALT 20V MAX XR Cordless Brushless 3" Cut-Off Tool (tool-only)) |
+| `NavigateToProductReviews` | `assert text` | verifies the presence of "Customer Reviews" |
 | `SearchItem` | `assert text` | verifies the presence of "Milwaukee Tool PACKOUT 22-inch Rolling Tool Box" after searching for it |
 | `SearchInvalidItem` | `assert text` | verifies the presence of "computer monitor" in the text of the queried items |
 | `NavigateToShopByRoom` | `assert title` | The page should successfully navigate to the "Shop by Room" section |
 | `SelectSpecificRoom` | `assert title` | The page should successfully navigate to the "Kitchen" category under "Shop by Room" |
-| `DepartmentMenu` | `assert presence` | The page should successfully display a dropdown menu with various departments |
+| `DepartmentMenu` | `assert element present` | The page should successfully display a dropdown menu with various departments |
 | `SelectSpecificItem` | `assert title` | The page should successfully navigate to the "Air Purifiers & Filters" items category under the "Heating & Cooling" department|
 | `ShopInWarehouseValueAndSpecials` | `assert title` | The page should successfully navigate to the Warehouse Value and Specials page |
 | `SaleInWarehouseValueAndSpecials` | `assert element present` | The items chosen products listed in this section should have an indicator of being on sale (such as a discounted price, "sale" or "discount" label)

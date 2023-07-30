@@ -180,6 +180,18 @@ Assertions and checkpoints are vital components of our testing process, utilized
 | `DepartmentMenu` | `assert presence` | The page should successfully display a dropdown menu with various departments |
 | `SelectSpecificItem` | `assert title` | The page should successfully navigate to the "Air Purifiers & Filters" items category under the "Heating & Cooling" department|
 | `ShopInWarehouseValueAndSpecials` | `assert text` | The items chosen products listed in this section should have an indicator of being on sale (such as a discounted price, "sale" or "discount" label)
+| `SignUpNavigate`                 | `assert element present`           | The page should successfully navigate to the "Sign Up" section                                                    |
+| `SignUpDetails`                  | `assert text`                      | Verifies that user input fields and the "Sign Up" button are present on the page                                  |
+| `AddItemNavigate`                | `assert title`                     | The page should successfully navigate to the item's detail page                                                   |
+| `AddItemToCart`                  | `assert element present`           | Verifies that the "Add to Cart" button is present and can be clicked                                              |
+| `ChangeStoreNavigate`            | `assert title`                     | The page should successfully navigate to the "Change Store" section                                               |
+| `ChangeStoreLocation`            | `assert element present`           | Verifies the address input field and "Search" button are present on the page                                      |
+| `ChangeStoreSelection`           | `assert text`                      | Verifies that the first store from the search results matches the address provided                                |
+| `SubscribeWeeklyFlyerNavigate`   | `assert title`                     | The page should successfully navigate to the "Weekly Flyer" section                                               |
+| `SubscribeWeeklyFlyer`           | `assert element present`           | Verifies that the subscription input fields (such as email or phone number) and the "Subscribe" button are present |
+| `SearchWeeklyFlyerNavigate`      | `assert title`                     | The page should successfully navigate to the "Weekly Flyer" section                                               |
+| `SearchValidItemWeeklyFlyer`     | `assert text`                      | Verifies that the valid item appears in the search results                                                        |
+| `SearchInvalidItemWeeklyFlyer`   | `assert text`                      | Verifies that the invalid item does not appear in the search results and an appropriate error message is displayed |
 
 
 # how did you test each functionality with different test data

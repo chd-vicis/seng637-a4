@@ -11,7 +11,7 @@
 | Christopher DiMattia                |
 
 # Introduction
-
+In this assignment mutation testing and well as web app testing was practised and analyzed.  Mutation testing was performed on the same Range and DataUtilties class as the previous assignments, while the automated web app testing was performed on ABC website with the Selenium library.  The team learned valuable lessons about mutation testing as well as automation testing and was able to overcome challenges related to both.
 
 # Analysis of 10 Mutants of the Range class 
 1. Mutation #1 (on line #123, mutation #5)<br>
@@ -119,12 +119,35 @@
   
 
 # Analysis drawn on the effectiveness of each of the test classes
+The effectiveness of each of the method was either improved drastically if it had no previous test cases, or very minimially if it had existing test cases from previous assignments.  The mutation score for methods that had tests from previous assignemnts already had high test scores (79-86%) due to the extensiveness of their previous testing and the majority of the unkilled mutants came from equivalent mutants which by definition do not affect the functionality of the software or method and are thus extremely difficult to kill.  As a way to improve the overall test score the team decided to include other functions within the tested classes to improve the overall score.  As can be seen above for the Range class, the overall coverage imrpoved greatly, but interestingly the other methods also peaked in test score in the 79-86% range, suggesting that the mutant equivalnets account for roungly 14-21% of the mutants.  The percentage of mutants killed also remained relatively similar depsire the number of tests.
+
+Overall the team waas able to easily identify why certain mutants survived and if the mutant was killable or was an equivalent mutant.  The team also managed to obtain fairly high mutation scores with the lowest being 79%. 
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
+The effect of equivalent mutants on the mutation score was to lower the accuracy.  Equivalent mutants by definition do not affect the behaviour of the SUT and so cannot be killed with a prime example above being the post increment operator which is a mutant that cannot be detected with easily.  Equivalent mutants are thus extremely difficult to test for and require more complex testing or require the tester to create tests that are beyong the scope of what tests normally aim for.  As with the post increment operator it is possible to catch that mutant with a test that not only returns the function but then uses that function again, but this has the problem of then expanding test cases to beyong the limited domain in which they are typically tested.  A simple way to deal with equivalent mutants is to perform a manual review in which equivalent mutants are reviewed to see if they would affect the program but this is often not feasbile and is error prone for multiple reasons (testers not knowing if a equivalnet mutant is dangerous becasue they lack context of the program, the program or method scope changes, mistakes due to human factors such as fatigue, etc).
+
+In general equivalent mutants will lower the mutation score and it is recommended that more advanced testing be applied to kill mutants such as writing tests that may have an expanded scope, limit the types of mutant operators that can be applied to a test or apply more complex analysis of mutant results to isolate which are due to equivalent mutants and ignore them.  Upon researching how to kill equivalent mutants the team found several interessting papers and softwares but the two most convincing papers are listed below.
+1. https://www.sciencedirect.com/science/article/pii/S0167642314002603
+2. https://www.sciencedirect.com/science/article/pii/S0167642314002603
+
 
 # A discussion of what could have been done to improve the mutation score of the test suites
+As mentioned above the mutation test scores for the methods covered in previous assignments had few non-equivalent mutants and the team found it extremely difficult to improve the mutant test score by more than 10%, so the team opted to add addtional tests to the Range and DataUtiltites class which improved the overall tests score.  The main problem was the equivalent mutants which are not possible to kill without using far more complex test cases.  For non-equivalent mutants the team simply analyzed the mutant and added addtional tests based on the method function to catch the mutant.
+
+One of the suggestion brought up by the team that could have detected equivalent mutatns would be to combine test cases with simple operations or even other test cases.  For instance when testing the "getUpperBound" method the team could have created a method that checked to see if the upper bound was returned after it was added to a known value.  This would have been a way to catch the equivalent mutant that uses post and pre increment operators.  While this testing is simple, it comlicates tests and violates the principle that tests should be restricted to their immediate functionality and not test other methods regardless of how simple they are.
 
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
+
+Advantages
+1. Mutant testing is automated and thus can be accomplished quickly in comparision to exploratory testing or manual testing
+2. Mutant testing provides an easily way to detect faults in code (white box testing)
+3. Mutant testing is good for benchmarking other testing methods.  For instance a high mutation test score indicates the tests as well designed and in general the more types of testing each test suite is analzed under the more confident a tester can be they designed a well rounded test suite.
+
+
+Disadvantages
+1. Equivalent mutations often skew the scores and make test scores difficult to interpt without a deeper knowledge of the test suite and what mutants are applied to it
+2. Equivalent mutations often require manual review to understand if it's a killable mutant or an equivalent mutant which is time consuming and is sucepitable to human error
+3. Mutation testing can be computationally expensive in comparision to other test suites becacuse each test is effectively tested multiple times instead of just one.  For this assignment and small test suites it is not an issue but for large test suites it could be extremely time consuming to the point of impracticality.
 
 # Explain your SELENUIM test case design process
 

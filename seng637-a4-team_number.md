@@ -326,7 +326,9 @@ We divided this task as instructed in the assignment. Each team member was respo
 Difficulties and Challenges
 
 1. One challenge was handling iframes and pop-up windows, as Selenium can interact only with the currently focused window or frame. We had to learn how to correctly switch focus to handle these situations.
+2. A notable challenge encountered while employing the PIT tool was the lack of clarity in some of the explanations provided for the injected mutants during the analysis process. 
 
 # Comments/feedback on the lab itself
 
 1. The lab was a valuable and practical learning experience that allowed us to apply theoretical knowledge of Selenium in a real-world scenario. The practical exposure to automated testing using Selenium was extremely beneficial, providing firsthand experience in handling various web components and situations.
+2. The utilization of the PIT software proved highly beneficial in evaluating the effectiveness of our test cases. The complete procedure, encompassing the execution of the PIT tool, examination of the mutants to determine their survival or if they were killed, incorporation of additional test cases to eliminate surviving mutants, and thoughtful analysis of equivalent mutants, provided a valuable learning opportunity.

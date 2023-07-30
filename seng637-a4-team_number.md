@@ -224,7 +224,8 @@ We selected X key functionalities of the Home Depot website to test thoroughly. 
 |              | Test if kitchen furnishings and appliances appear when clicking on "Kitchen" |
 | Shop by Department | Test if the "Shop by Department" dropdown appears after clicking on the nav link        |
 |              | Test if "Air Purifiers & Filters" appear when routing to "Heating & Cooling" -> "Air Purifiers & Filters" |
-| Warehouse Value & Specials | Test if items under "Savings Lighting & Ceiling Fans" are on sale |
+| Warehouse Value & Specials | Test if the page navigates to the Warehouse Value & Specials page |
+|                               | Test if items under "Savings Lighting & Ceiling Fans" are on sale        |
 | Sign In                       | Test if the "Sign In" form can be accessed from "account" page                                   |
 |                               | Test if user can sign in by entering valid details (e.g., username, password)         |
 | Add Item to Cart              | Test if the product detail page appears after clicking on a specific item                            |

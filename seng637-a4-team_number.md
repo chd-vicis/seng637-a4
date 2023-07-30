@@ -181,7 +181,8 @@ Assertions and checkpoints are vital components of our testing process, utilized
 | `SelectSpecificItem` | `assert title` | The page should successfully navigate to the "Air Purifiers & Filters" items category under the "Heating & Cooling" department|
 | `ShopInWarehouseValueAndSpecials` | `assert text` | The items chosen products listed in this section should have an indicator of being on sale (such as a discounted price, "sale" or "discount" label)
 | `SignInNavigate`                 | `assert element present`           | The page should successfully navigate to the "Sign In" section                                                    |
-| `SignInDetails`                  | `assert text`                      | Verifies user information in account details after signing in
+| `SignInValidDetails`                  | `assert text`                      | Verifies user information in account details after signing in
+| `SignInInvalidDetails`                  | `assert text`                      | Informs user that credientials provided were incorrect
 | `AddItemNavigate`                | `assert title`                     | The page should successfully navigate to the item's detail page                                                   |
 | `AddItemToCart`                  | `assert text`           | Verifies that the "Add to Cart" button is present and can be clicked                                              |
 | `ChangeStoreNavigate`            | `assert title`                     | The page should successfully navigate to the "Change Store" section                                               |                                      |
@@ -209,7 +210,7 @@ We selected X key functionalities of the Home Depot website to test thoroughly. 
 |              | Test if "Air Purifiers & Filters" appear when routing to "Heating & Cooling" -> "Air Purifiers & Filters" |
 | Warehouse Value & Specials | Test if items under "Savings Lighting & Ceiling Fans" are on sale |
 | Sign In                       | Test if the "Sign In" form can be accessed from "account" page                                   |
-|                               | Test if user can sign in by entering valid details (e.g., username, password)          |
+|                               | Test if user can sign in by entering valid details (e.g., username, password)         |
 | Add Item to Cart              | Test if the product detail page appears after clicking on a specific item                            |
 |                               | Test if the item can be added to the cart by clicking on the "Add to Cart" button                    |
 | Change Store                  | Test if the "Change Store" page appears after clicking on the nav link                               |

@@ -194,7 +194,8 @@ Assertions and checkpoints are vital components of our testing process, utilized
 | `SelectSpecificRoom` | `assert title` | The page should successfully navigate to the "Kitchen" category under "Shop by Room" |
 | `DepartmentMenu` | `assert presence` | The page should successfully display a dropdown menu with various departments |
 | `SelectSpecificItem` | `assert title` | The page should successfully navigate to the "Air Purifiers & Filters" items category under the "Heating & Cooling" department|
-| `ShopInWarehouseValueAndSpecials` | `assert text` | The items chosen products listed in this section should have an indicator of being on sale (such as a discounted price, "sale" or "discount" label)
+| `ShopInWarehouseValueAndSpecials` | `assert title` | The page should successfully navigate to the Warehouse Value and Specials page |
+| `SaleInWarehouseValueAndSpecials` | `assert text` | The items chosen products listed in this section should have an indicator of being on sale (such as a discounted price, "sale" or "discount" label)
 | `SignInNavigate`                 | `assert element present`           | The page should successfully navigate to the "Sign In" section                                                    |
 | `SignInValidDetails`                  | `assert text`                      | Verifies user information in account details after signing in
 | `SignInInvalidDetails`                  | `assert text`                      | Informs user that credientials provided were incorrect

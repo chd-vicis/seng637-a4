@@ -133,7 +133,7 @@ This report presents the findings of the team's work on mutation testing and aut
   |DataUtilities.createNumberArray2D(double[][] data)            | 2 | 42 | 44 | 95% |
   |DataUtilities.getCumulativePercentages(KeyedValues data)      | 8 | 117 | 125 | 94% |
   
-  - Mutation Score of DataUtilities Class - After<br>
+- Mutation Score of DataUtilities Class - After<br>
   <img width="810" alt="Screenshot 2023-07-30 at 4 23 59 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/32689fdd-1d67-4f7d-9057-73b8de6a24d3"><br>
 - Mutation Statistics of DataUtilities Class - After<br>
   <img width="200" alt="Screenshot 2023-07-30 at 4 24 15 PM" src="https://github.com/chd-vicis/seng637-a4/assets/61436662/7d41a5bd-ba6d-4c57-b950-c8303e286a6a"><br>

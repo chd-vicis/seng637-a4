@@ -163,7 +163,7 @@ Our test case design process started with a clear understanding of the applicati
 
 The Selenium test case design process involves the following steps:
 
-1. **Defining the Scope of Testing:** Before we began with the design process, we identified the functionalities of the Home Depot website that were critical and required testing. This helped us narrow down our focus and design meaningful test cases. The functionalities we decided to test included user sign-in, item search, navigating through different categories, adding an item to cart, changing the store, etc.
+1. **Defining the Scope of Testing:** Before we began with the design process, we identified the functionalities of the Home Depot website that were critical and required testing. This helped us narrow down our focus and design meaningful test cases. The 10 functionalities we decided to test included Customer Reviews, Search bar, Shop by Rooms, Shop by Department, Warehouse Value & Specials, Sign In, Add Item to Cart, Change Store, Find Home Service, Search in Weekly Flyer.
 
 2. **Test Recording:** After defining our scope, we moved on to recording our tests. This was performed using Selenium IDE's 'Record' function. With the record feature turned on, we navigated to the Home Depot site in our browser and began performing the various actions corresponding to our scope. For instance, we searched for a product, navigated to its details, added it to the cart, and proceeded to checkout. Selenium IDE recorded all these interactions.
 

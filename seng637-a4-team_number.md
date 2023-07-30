@@ -282,14 +282,16 @@ We divided this task as instructed in the assignment. Each team member was respo
 
 | Test cases            | Taken by: |
 |-----------------------|-----------|
-|                  |     |
-|                 |      |
-|       |     |
-|  |      |
-|       |     |
-|              |       |
-|     |       |
-|            |     |
+|     Customer Reviews             |     |
+|         Search bar         |      |
+|    Shop by Room   |     |
+| Shop by Department |      |
+|    Warehouse Value & Specials   |     |
+|     Sign In          |       |
+|   Add Item to Cart   |       |
+|      Change Store        |     |
+|      Find Home Service       |     |
+|      Search in Weekly Flyer         |     |
 
 # Difficulties encountered, challenges overcome, and lessons learned
 

@@ -14,8 +14,6 @@
 # Introduction
 This report presents the findings of the team's work on mutation testing and automated web app testing. The team focused on applying mutation testing to the Range and DataUtilties classes and performed web app testing on the ABC website using the Selenium library. Throughout the process, the team encountered challenges and learned valuable lessons related to both mutation testing and automated testing, which are discussed in detail below.
 
-
-
 # Analysis of 10 Mutants of the Range class 
 1. Mutation #1 (on line #123, mutation #5)<br>
   Mutation applied by Pitest tool - Replaced double subtraction with addition on method Range.getLength(). This mutant was applied on the following line:
@@ -321,12 +319,28 @@ We divided this task as instructed in the assignment. Each team member was respo
 |      Find Home Service       |  Nikhil   |
 |      Search in Weekly Flyer         |   Nikhil  |
 
+The mutation testing was split as pre the previous assignemnts with each member reasonsible for two methods.  If the methods mutation score couldn't be increased then they were reasonsible for adding test cases to their class for methods not previously tested.  See below for the breakdown.
+
+Class | Method | Tester
+--- | --- | ---
+Range | getLowerBound() | Christopher DiMattia 
+Range | getUpperBound() | Christopher DiMattia 
+Range | toString() | Steven Duong
+Range | getLength() | Steven Duong
+Range| combine(Range range1, Range range2) | Nikhil Naikar
+DataUtilities | createNumberArray2D(double[][] data) | Nikhil Naikar
+DataUtilities | calculateRowTotal(Values2D data, int row)  | Jason Xu
+DataUtilities | createNumberArray(double[] data) | Jason Xu
+DataUtilities | calculateColumnTotal(Values2D data, int column) | Jash Dubal
+DataUtilities| getCumulativePercentages(KeyedValues data) | Jash Dubal
+
 # Difficulties encountered, challenges overcome, and lessons learned
 
 Difficulties and Challenges
 
 1. One challenge was handling iframes and pop-up windows, as Selenium can interact only with the currently focused window or frame. We had to learn how to correctly switch focus to handle these situations.
-2. A notable challenge encountered while employing the PIT tool was the lack of clarity in some of the explanations provided for the injected mutants during the analysis process. 
+2. A notable challenge encountered while employing the PIT tool was the lack of clarity in some of the explanations provided for the injected mutants during the analysis process.
+3. Researching how to deal with equivalent mutations took more time than expected and answers were not clear as there doesn't appear to be a clearly defined way to deal with them and many different solutions seems plausible.
 
 # Comments/feedback on the lab itself
 
